@@ -21,8 +21,10 @@ We just have a basic java webapp which uses maven and appache tomcat to run.
  ![Image][]
 ### Breakdown of repository structure
 
-In the CodeCommit repository above we have the following folder structure:
-* config – this is where all of the Buildspec files will live for our AWS CodeBuild jobs.
-* lambdas – this is where we will store all of our AWS Lambda functions.
-* tests – this is the top-level folder for unit and end-to-end tests. It contains two sub-folders (unit and e2e).
-* cloudformation – this is where we will add any extra CloudFormation templates.
+In the CodeCommit repository above we have the following folder and files structure:
+* Buildspec – this is where all of the YML code is for our AWS CodeBuild jobs.
+* appspec – this is where we have YML code for codeDeploy job.
+* src – java Code which will be deploy on ec2.
+* Scripts – Contains bash script to step us the environment on ec2 instance.
+
+  
