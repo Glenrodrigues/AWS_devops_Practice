@@ -25,6 +25,25 @@ In the CodeCommit repository above we have the following folder and files struct
 * Buildspec – this is where all of the YML code is for our AWS CodeBuild jobs.
 * appspec – this is where we have YML code for codeDeploy job.
 * src – java Code which will be deploy on ec2.
-* Scripts – Contains bash script to step us the environment on ec2 instance.
+* Scripts – Contains bash script to step us the environment on ec2 instance
 
+## Code build 
+### Step 1
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/CD_app1.png)
+Create Application under code deploy and choose `EC2` as we are doing `on-premises` deploy
+### Step 2
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app2.png)
+create a service role which has permission of `code_deploy_power_user`
+### Step 3
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app3.png)
+### Step 4
+### Note run 2 instance and assign a ROLE to it which has code deploy policy and give same tag name for both the instance ,in my case i have given KEY=env , value:Prod
+
+As we are deploying webapp on EC2 select Ec2 and their tags
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app4.png)
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app5.png)
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app6.png)
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app7.png)
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app8.png)
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app9.png)
   
