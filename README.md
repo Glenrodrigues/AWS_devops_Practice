@@ -28,22 +28,60 @@ In the CodeCommit repository above we have the following folder and files struct
 * Scripts – Contains bash script to step us the environment on ec2 instance
 
 ## Code build 
+
 ### Step 1
 ![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/CD_app1.png)
+
 Create Application under code deploy and choose `EC2` as we are doing `on-premises` deploy
+
 ### Step 2
 ![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app2.png)
+
 create a service role which has permission of `code_deploy_power_user`
+
 ### Step 3
 ![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app3.png)
+
 ### Step 4
 ### Note run 2 instance and assign a ROLE to it which has code deploy policy and give same tag name for both the instance ,in my case i have given KEY=env , value:Prod
 
 As we are deploying webapp on EC2 select Ec2 and their tags
+
+
 ![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app4.png)
+
+### Step 5
+
 ![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app5.png)
-![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app6.png)
+
+Uncheck the load balancer as we are not using it for this tutorial and create application 
+
+### Step 6
+Go to `Application > [your_Application_name]` and create deployment group , in my case i named it as `namigroup'
+
+In this step we have to mention the path of `artifacts` created by `code_deploy` which we have store in `S3`.
+
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/CD_app6.png)
+
+
+As you can see i am in S3> [folder_name]>[file_name] (folder name and file name are mention in  buildspec file used in code deploy) 
+
+
+### Step 7
+
 ![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app7.png)
-![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app8.png)
-![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/cd_app9.png)
+
+
+As you can see i am in S3> [folder_name]>[file_name],`folder name and file name are mention in  buildspec file used in code deploy`
+
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/CD_app8.png)
+
+
+Now click on create and process will began, code deploy will deploy our code on EC2 
+
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/CD_app9.png)
+
+
+After completing go on to Ec2 instance and run their Public IP in browser.
+### Make sure you have given HHTP 80 in inbound security group.
   
