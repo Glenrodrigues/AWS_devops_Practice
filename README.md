@@ -84,4 +84,29 @@ Now click on create and process will began, code deploy will deploy our code on 
 
 After completing go on to Ec2 instance and run their Public IP in browser.
 ### Make sure you have given HHTP 80 in inbound security group.
-  
+
+## Codepipeline 
+### Step 1
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/pipe_1.png)
+
+Select Create pipeline and attach service role to it which has permission of codepipeline.
+There are 4 step in code pipline 
+
+### Select source  
+
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/pipe_2.png)
+
+Select codecommit repo and its branch.
+
+
+### Select code build
+
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/pipe_3.png)
+
+
+### Select code deploy 
+
+![image](https://github.com/Glenrodrigues/AWS_devops_Practice/blob/main/java%20cicd/pipe_4.png)
+
+
+Make changes in your code and push it to code commit then codepipline will deploy that changes on EC2 instance.
